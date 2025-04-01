@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ onNewCategory }) => {
     const [inputValue, setInputValue] = useState('One Punch'); // Input value state
 
     const onInputChange = ({target}) => {
@@ -14,7 +14,7 @@ export const AddCategory = ({ setCategories }) => {
         console.log('Submit Form', inputValue);
 
         if(inputValue.trim().length <= 1) return; // Validate input length
-        setCategories(categories => [inputValue, ...categories]); // Update categories state
+        onNewCategory(inputValue.trim()); // Call the function passed as prop
         setInputValue(''); // Reset input value
     }
 
