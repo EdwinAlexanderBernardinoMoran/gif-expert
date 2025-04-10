@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getGifs } from '../helpers/getGifs';
+import { GifItem } from './GitItem';
 
 export const GifGrid = ({ category }) => {
     
@@ -20,16 +21,13 @@ export const GifGrid = ({ category }) => {
       <h3>{category}</h3>
       {/* <h5>{ counter }</h5>
       <button onClick={ () => setcounter(counter + 1)}>+1</button> */}
-      <ol>
+      <div className='card-grid'>
         {
-          images.map( ({ id, title, url }) => (
-            <li key={id}>
-            <p>{title}</p>
-            <img src={url} alt={title} />
-            </li>
+          images.map( (image) => (
+            <GifItem key={ image.id } { ...image }/>
           ))
         }
-      </ol>
+      </div>
     </>
   )
 }
