@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getGifs } from '../helpers/getGifs';
-import { GifItem } from './GitItem';
+import { GifItem } from './GifItem';
 
 export const GifGrid = ({ category }) => {
     

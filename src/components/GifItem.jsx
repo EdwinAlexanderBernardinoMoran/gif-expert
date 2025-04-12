@@ -1,4 +1,4 @@
-export const GitItem = ({ id, title, url}) => {
+export const GifItem = ({ id, title, url}) => {
   return (
     <div className='card'>
         <img src={url} alt={ title } />
